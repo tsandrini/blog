@@ -7,12 +7,12 @@ const parser = new MarkdownIt()
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export async function GET(context: any) {
-  const blog = await getCollection('posts')
+  const immutable-insights = await getCollection('posts')
   return rss({
     title: siteConfig.title,
     description: siteConfig.subtitle || 'No description',
     site: context.site,
-    items: blog.map(post => ({
+    items: immutable-insights.map(post => ({
       title: post.data.title,
       pubDate: post.data.published,
       description: post.data.description,

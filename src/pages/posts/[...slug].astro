@@ -15,10 +15,10 @@ import { profileConfig } from '../../config'
 import { formatDateToYYYYMMDD } from '../../utils/date-utils'
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts', ({ data }) => {
+  const immutable-insightsEntries = await getCollection('posts', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
   })
-  return blogEntries.map(entry => ({
+  return immutable-insightsEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }))

@@ -40,7 +40,7 @@
 
   enterShell = ''
     # Welcome splash text
-    echo ""; echo -e "\e[1;37;42mWelcome to the blog devshell!\e[0m"; echo ""
+    echo ""; echo -e "\e[1;37;42mWelcome to the immutable-insights devshell!\e[0m"; echo ""
   '';
 
   # ---------------
@@ -48,7 +48,7 @@
   # ---------------
   scripts = {
     "rename-project".exec = ''
-      find $1 \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i "s/blog/$2/g"
+      find $1 \( -type d -name .git -prune \) -o -type f -print0 | xargs -0 sed -i "s/immutable-insights/$2/g"
     '';
   };
 

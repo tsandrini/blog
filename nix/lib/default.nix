@@ -11,7 +11,7 @@ let
 
   bootstrap = import ./_bootstrap-lib.nix { inherit lib; };
 
-  blog = lib.makeExtensible (
+  immutable-insights = lib.makeExtensible (
     self:
     with self;
     mapModules' ./. (
@@ -28,4 +28,4 @@ let
     )
   );
 in
-blog.extend (_self: super: lib.foldr (a: b: a // b) { } (lib.attrValues super))
+immutable-insights.extend (_self: super: lib.foldr (a: b: a // b) { } (lib.attrValues super))

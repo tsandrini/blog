@@ -1,5 +1,5 @@
 {
-  description = "blog - TODO Add a description of your new project";
+  description = "immutable-insights - TODO Add a description of your new project";
 
   inputs = {
     # --- BASE DEPENDENCIES ---
@@ -43,7 +43,7 @@
     inputs@{ flake-parts, ... }:
     let
       inherit (inputs) nixpkgs;
-      inherit (lib.blog) mapModules flatten;
+      inherit (lib.immutable-insights) mapModules flatten;
 
       # You should ideally use relative paths in each individual part from ./parts,
       # however, if needed you can use the `projectPath` variable that is passed
@@ -56,7 +56,7 @@
       # you can use it in your custom modules
       lib = nixpkgs.lib.extend (
         self: _super: {
-          blog = import ./nix/lib {
+          immutable-insights = import ./nix/lib {
             inherit inputs projectPath;
             pkgs = nixpkgs;
             lib = self;
@@ -95,7 +95,7 @@
       #
       # `systems = (import inputs.systems) ++ [ "armv7l-linux" ];`
       systems = import inputs.systems;
-      flake.lib = lib.blog;
+      flake.lib = lib.immutable-insights;
 
       # NOTE Since the official flakes output schema is unfortunately very
       # limited you can enable the debug mode if you need to inspect certain
